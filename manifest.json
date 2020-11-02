@@ -1,0 +1,35 @@
+{
+  "name": "Azure DevOps Pull Request Monitor",
+  "version": "1.0",
+  "description": "Azure DevOps Pull Request Monitor",
+  "manifest_version": 2,
+  "browser_action": {
+    "browser_style": true,
+    "chrome_style": true,
+    "default_icon": "assets/button.png"
+  },
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+  "options_ui":{
+    "page": "options.html"
+  },
+  "icons": {
+    "48": "assets/button.png"
+  },
+  "content_scripts": [{
+    "all_frames": true,
+    "matches": ["https://*.visualstudio.com/_pulls", "https://dev.azure.com/*/_pulls"],
+    "js": ["contentScript.js"],
+    "run_at": "document_end"
+  }],
+  "permissions": [
+    "https://*.visualstudio.com/_pulls",
+    "https://dev.azure.com/*/_pulls", 
+    "webRequest", 
+    "webRequestBlocking",
+    "alarms",
+    "storage"
+  ]
+}
