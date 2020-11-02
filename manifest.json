@@ -1,7 +1,7 @@
 {
   "name": "Azure DevOps Pull Request Monitor",
-  "version": "1.0",
-  "description": "Azure DevOps Pull Request Monitor",
+  "version": "0.1",
+  "description": "Monitor pull request updates for selected Azure DevOps organization",
   "manifest_version": 2,
   "browser_action": {
     "browser_style": true,
@@ -20,12 +20,11 @@
   },
   "content_scripts": [{
     "all_frames": true,
-    "matches": ["https://*.visualstudio.com/_pulls", "https://dev.azure.com/*/_pulls"],
+    "matches": ["https://dev.azure.com/*/_pulls"],
     "js": ["contentScript.js"],
     "run_at": "document_end"
   }],
   "permissions": [
-    "https://*.visualstudio.com/_pulls",
     "https://dev.azure.com/*/_pulls", 
     "webRequest", 
     "webRequestBlocking",

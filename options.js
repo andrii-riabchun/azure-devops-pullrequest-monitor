@@ -4,14 +4,14 @@ if (typeof browser === 'undefined'){
 
 function saveOptions(e) {
   browser.storage.local.set({
-    orgUrl: document.querySelector("#orgUrl").value
+    organization: document.querySelector("#organization").value
   });
   e.preventDefault();
 }
 
 function restoreOptions() {
-  browser.storage.local.get('orgUrl',(res) => {
-    document.querySelector("#orgUrl").value = res.orgUrl || "";
+  browser.storage.local.get('organization',(res) => {
+    document.querySelector("#organization").value = res.organization || "";
   })
 }
 
