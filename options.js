@@ -4,14 +4,16 @@ if (typeof browser === 'undefined'){
 
 function saveOptions(e) {
   browser.storage.local.set({
-    organization: document.querySelector("#organization").value
+    organizations: (document.querySelector("#organizations").value || "").split(/\r?\n/),
+    refreshInterval: parseInt(document.querySelector("#refreshInterval").value)
   });
   e.preventDefault();
 }
 
 function restoreOptions() {
-  browser.storage.local.get('organization',(res) => {
-    document.querySelector("#organization").value = res.organization || "";
+  browser.storage.local.get(null,(res) => {
+    document.querySelector("#organizations").value = (res.organizations || []).join('\r\n');
+    document.querySelector("#refreshInterval").value = (res.refreshInterval || 5);
   })
 }
 

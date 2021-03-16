@@ -5,9 +5,13 @@
 </head>
 <body>
   <form>
-    <label>Azure DevOps organization</label>
+    <label>Azure DevOps organizations, one organization per line</label>
     <br>
-    <input type="text" id="organization" style="width: 94vw;"/>
+    <textarea id="organizations" style="width: 94vw; height: 200px;"></textarea>
+    <br>
+    <label>Refresh interval, minutes</label>
+    <br>
+    <input type="number" id="refreshInterval" style="width: 94vw;"/>
     <br><br>
     <button type="submit">Save</button>
   </form>
