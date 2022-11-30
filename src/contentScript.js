@@ -29,7 +29,7 @@ function sendUpdates() {
         }
     });
 
-    const count = cards.reduce((x, y) => x.count + y.count);
+    const count = cards.reduce((x, y) => x.count + y.count, {count: 0});
 
     var payload = {
       key: "unreadPullRequests",
