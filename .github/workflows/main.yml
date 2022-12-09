@@ -6,8 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: montudor/action-zip@v1
-      - run: zip -r package.zip *
-        working-directory: src
+      - run: zip -r package.zip src/*
       - uses: actions/upload-artifact@v2
         with:
           name: package.zip
