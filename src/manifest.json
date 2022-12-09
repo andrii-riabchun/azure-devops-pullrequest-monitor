@@ -1,6 +1,6 @@
 {
   "name": "Azure DevOps Pull Request Monitor",
-  "version": "0.6",
+  "version": "0.7",
   "description": "Monitor pull request updates for selected Azure DevOps organizations",
   "manifest_version": 2,
   "browser_action": {
