@@ -1,4 +1,4 @@
-name: Archive pipeline
+name: Archive package
 on: push
 jobs:
   archive:
@@ -7,7 +7,8 @@ jobs:
       - uses: actions/checkout@v1
       - uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r package.zip src
+          args: zip -r package.zip *
+          working-directory: src
       - uses: actions/upload-artifact@v2
         with:
           name: package.zip
