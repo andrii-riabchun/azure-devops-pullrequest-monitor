@@ -5,13 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: montudor/action-zip@v1
-      - run: zip -r package.zip *
-        working-directory: src
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: package
-          path: src/package.zip
+          path: src
 
           
   
